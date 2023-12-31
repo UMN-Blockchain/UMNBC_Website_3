@@ -175,21 +175,27 @@
 
                                 /* ===== MEDIA QUERIES (MEDIUM DEVICES) ===== */
 @media screen and (max-width: 1024px) {
-   .hero {
-        gap: 1rem;
-        flex-direction: column-reverse;
-        top: 0;
-    }
-    #groupPic {
-      width: 80%;
-    }
-    .left-hero {
-      flex-direction: row;
-      justify-content: center;
-    }
-    .left-hero ul {
-      display: flex;
-    }
+  .hero {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  #groupPic {
+    width: 80%;
+    margin: 1rem;
+  }
+  .left-hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-hero ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .left-hero li {
+    flex: 0 0 50%; /* Two columns on medium devices */
+    box-sizing: border-box;
+  }
   
 
 }
@@ -197,9 +203,38 @@
 
 @media screen and (max-width: 600px) {
   #groupPic {
-    width: 14%;
+    width: 95%;
   }
   .hero-corner-name {
     display: none;
+  }
+  .hero {
+    position:unset;
+    gap: 0;
+    flex-direction:column;
+    justify-content:unset;
+    top: 0;
+  }
+  .hero-wrap {
+    height: 118vh;
+    align-items: normal;
+  }
+  .left-hero, .right-hero {
+    height: 55%;
+    margin-bottom: 1rem;
+  }
+  .left-hero {
+    order: 2;
+  }
+  .card-wrap {
+    flex-direction: column;
+    height: unset;
+    align-items: center;
+    width: unset;
+  }
+  .card {
+    height: 55vh;
+    width: 75%;
+    font-size: 2rem;
   }
 }
